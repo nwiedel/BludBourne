@@ -5,6 +5,8 @@ Das Programm stellt eine Nachschrift des RPG Spiels BludBoure aus dem Buch
 www.pachtpub.com
 Autor: Patrick Hoey
 
+Für die Benutzung der Grafiken verweise ich auf die Datei im Assets - Ordner unter licenses.
+
 A [libGDX](https://libgdx.com/) project generated with [gdx-liftoff](https://github.com/libgdx/gdx-liftoff).
 
 This project was generated with a template including simple application launchers and an `ApplicationAdapter` extension that draws libGDX logo.

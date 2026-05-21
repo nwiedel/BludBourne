@@ -1,32 +1,20 @@
 package de.nicolas.bludbourne;
 
-import com.badlogic.gdx.ApplicationAdapter;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.utils.ScreenUtils;
+import com.badlogic.gdx.Game;
+import de.nicolas.bludbourne.screens.MainGameScreen;
 
-/** {@link com.badlogic.gdx.ApplicationListener} implementation shared by all platforms. */
-public class BludBourne extends ApplicationAdapter {
-    private SpriteBatch batch;
-    private Texture image;
+/** die Haupt GameKlasse des Spiels */
+public class BludBourne extends Game {
+
+    public static final MainGameScreen mainGameScreen = new MainGameScreen();
 
     @Override
     public void create() {
-        batch = new SpriteBatch();
-        image = new Texture("libgdx.png");
-    }
-
-    @Override
-    public void render() {
-        ScreenUtils.clear(0.15f, 0.15f, 0.2f, 1f);
-        batch.begin();
-        batch.draw(image, 140, 210);
-        batch.end();
+        setScreen(mainGameScreen);
     }
 
     @Override
     public void dispose() {
-        batch.dispose();
-        image.dispose();
+        mainGameScreen.dispose();
     }
 }
