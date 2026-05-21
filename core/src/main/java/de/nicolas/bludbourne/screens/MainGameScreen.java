@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
+import com.badlogic.gdx.utils.ScreenUtils;
 
 public class MainGameScreen implements Screen {
 
@@ -54,12 +55,23 @@ public class MainGameScreen implements Screen {
 
         currentPlayerSprite = player.getFrameSprite();
 
-        controller = new new PlayerController(player);
+        controller = new PlayerController(player);
         Gdx.input.setInputProcessor(controller);
     }
 
     @Override
     public void hide() {
-        
+
+    }
+
+    @Override
+    public void render(float delta) {
+        ScreenUtils.clear(0, 0, 0, 1f);
+
+        // die Kamera auf den Spieler ausrichten
+        camera.position.set(currentPlayerSprite.getX(), currentPlayerSprite.y, 0);
+
+        player.update(delta);
+        currentPlayerFrame = player.getFrame();
     }
 }
