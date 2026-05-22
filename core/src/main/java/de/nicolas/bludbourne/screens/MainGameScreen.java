@@ -69,7 +69,8 @@ public class MainGameScreen implements Screen {
         ScreenUtils.clear(0, 0, 0, 1f);
 
         // die Kamera auf den Spieler ausrichten
-        camera.position.set(currentPlayerSprite.getX(), currentPlayerSprite.y, 0);
+        camera.position.set(currentPlayerSprite.getX(), currentPlayerSprite.getY(), 0);
+        camera.update();
 
         player.update(delta);
         currentPlayerFrame = player.getFrame();
